@@ -13,13 +13,13 @@
           </li>
         </div>
         <div *ngIf="!onlyOdd">
-          <li class="list-group-item" *ngFor="let even of evenNumbers" [ngClass]="{'odd': even % 2 !== 0}" >
+          <li class="list-group-item" *ngFor="let even of evenNumbers" [ngClass]="{'odd': even % 2 !== 0}" [ngStyle]="{ backgroundColor: (odd % 2 !== 0) ? '' : 'transparent'}" >
               {{even}}
           </li>
         </div>
       </ul>
         <p basicHighLight > Style me with basic highlight directive</p>
-        <p betterHighlight > Style me with basic highlight directive</p>
+        <p [betterHighlight]="'purple'" [defaultColor]="'teal'" > Style me with basic highlight directive</p>
     </div>
   </div>
 </div>
